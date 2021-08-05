@@ -67,6 +67,54 @@ custom_component:
 
 ## 红外接收
 remote_receiver:
-  pin: $irm
+  pin: 
+    number: $irm
+    inverted: True
+    mode: INPUT_PULLUP
   dump: all
+  on_nec:
+    then:
+    - mqtt.publish:
+        topic: esphome32/senso/ir
+        payload: !lambda |-
+          char temp[20];
+          sprintf(temp, "%d:%d", x.address, x.command);
+          ESP_LOGI("main", "nec: %s", temp);
+          return temp;
+  on_panasonic:
+    then:
+    - mqtt.publish:
+        topic: esphome32/senso/ir
+        payload: !lambda |-
+          char temp[20];
+          sprintf(temp, "%d:%d", x.address, x.command);
+          ESP_LOGI("main", "nec: %s", temp);
+          return temp;          
+  on_sony:
+    then:
+    - mqtt.publish:
+        topic: esphome32/senso/ir
+        payload: !lambda |-
+          char temp[20];
+          sprintf(temp, "%d:%d", x.data, x.nbits);
+          ESP_LOGI("main", "nec: %s", temp);
+          return temp; 
+  on_jvc:        
+    then:
+    - mqtt.publish:
+        topic: esphome32/senso/ir
+        payload: !lambda |-
+          char temp[20];
+          sprintf(temp, "%d", x.data);
+          ESP_LOGI("main", "nec: %s", temp);
+          return temp; 
+  on_rc5:        
+    then:
+    - mqtt.publish:
+        topic: esphome32/senso/ir
+        payload: !lambda |-
+          char temp[20];
+          sprintf(temp, "%d:%d", x.address, x.command);
+          ESP_LOGI("main", "nec: %s", temp);
+          return temp;
   
