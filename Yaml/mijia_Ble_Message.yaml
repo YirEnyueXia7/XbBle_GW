@@ -75,7 +75,7 @@ remote_receiver:
   on_nec:
     then:
     - mqtt.publish:
-        topic: esphome32/senso/ir
+        topic: vs1838b/sensor/ir
         payload: !lambda |-
           char temp[20];
           sprintf(temp, "%d:%d", x.address, x.command);
@@ -84,7 +84,7 @@ remote_receiver:
   on_panasonic:
     then:
     - mqtt.publish:
-        topic: esphome32/senso/ir
+        topic: vs1838b/sensor/ir
         payload: !lambda |-
           char temp[20];
           sprintf(temp, "%d:%d", x.address, x.command);
@@ -93,7 +93,7 @@ remote_receiver:
   on_sony:
     then:
     - mqtt.publish:
-        topic: esphome32/senso/ir
+        topic: vs1838b/sensor/ir
         payload: !lambda |-
           char temp[20];
           sprintf(temp, "%d:%d", x.data, x.nbits);
@@ -102,7 +102,7 @@ remote_receiver:
   on_jvc:        
     then:
     - mqtt.publish:
-        topic: esphome32/senso/ir
+        topic: vs1838b/sensor/ir
         payload: !lambda |-
           char temp[20];
           sprintf(temp, "%d", x.data);
@@ -111,7 +111,7 @@ remote_receiver:
   on_rc5:        
     then:
     - mqtt.publish:
-        topic: esphome32/senso/ir
+        topic: vs1838b/sensor/ir
         payload: !lambda |-
           char temp[20];
           sprintf(temp, "%d:%d", x.address, x.command);
