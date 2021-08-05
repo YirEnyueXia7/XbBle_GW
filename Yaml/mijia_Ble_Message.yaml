@@ -1,0 +1,72 @@
+esphome:
+  name: $devicename
+  platform: ESP8266
+  board: esp01_1m
+  includes:
+    - mijiaBleMessage_esp8266.h
+  
+substitutions:
+  devicename: 'mijia_ble_message'
+  irm: GPIO4
+  
+
+wifi:
+  # ssid: !secret wifi_ssid
+  # password: !secret wifi_passwd
+  reboot_timeout: 30min
+  networks:
+    - ssid: !secret wifi_ssid_3
+      password: !secret wifi_passwd_3
+      priority: 0
+    - ssid: !secret wifi_ssid
+      password: !secret wifi_passwd
+      priority: 1
+  ap:
+    ssid: !secret ap_ssid
+    password: !secret ap_password
+  # use_address: 172.22.0.120
+
+captive_portal:
+
+# Enable logging
+logger:
+  baud_rate: 0
+
+# # Enable Home Assistant API
+# api:
+#   password: !secret api_passwd
+#   reboot_timeout: 8h
+
+ota:
+  safe_mode: True
+  password: !secret ota_passwd
+  port: 8266
+  
+# Example configuration entry
+web_server:
+  port: 80
+  auth:
+    username: !secret web_server_username
+    password: !secret web_server_password
+    
+################################################################################
+
+## MQTT服务器Synology_eclipse-mosquitto
+mqtt:
+  broker: !secret syn_broker
+  port: !secret syn_port
+  username: !secret syn_username
+  password: !secret syn_password
+  # topic_prefix: mijia
+
+## 小白网关ttl输出
+custom_component:
+- lambda: |-
+    auto mijia = new mijiaBleMessage();
+    return {mijia};
+
+## 红外接收
+remote_receiver:
+  pin: $irm
+  dump: all
+  
