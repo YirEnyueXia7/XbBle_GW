@@ -14,5 +14,5 @@ https://github.com/huexpub/XbBleGW Huex大佬的板子没有固件和原理图�
 <!-- ![image](Img/Snipaste_2021-08-05_15-34-15.png) -->
 
 
-![loading image](Img/Snipaste_2021-08-05_15-33-13.png)
+![loading-image](Img/Snipaste_2021-08-05_15-33-13.png)
 
