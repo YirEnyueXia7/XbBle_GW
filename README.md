@@ -16,3 +16,5 @@ https://github.com/huexpub/XbBleGW Huex大佬的板子没有固件和原理图�
 
 ![loading-image](Img/Snipaste_2021-08-05_15-33-13.png)
 
+<img src="Disassemble/wechat_20210811204149.jpg" width="745" alt="loading-image"/>
+
