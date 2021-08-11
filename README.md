@@ -1,7 +1,7 @@
 # XbBle_GW
 创米小白万能遥控器（声控版）
 
-此项目为自用pcb设计+固件编译，对接蓝牙网关信息和红外信息到MQTT
+此项目为自用pcb设计+esphome固件编译，对接蓝牙网关信息和红外信息到MQTT
 
 https://github.com/killadm/LOCK2MQTT 拆机对接请学习K大
 
