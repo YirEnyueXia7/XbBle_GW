@@ -3,7 +3,7 @@
 
 此项目为自用pcb设计+esphome固件编译，对接蓝牙网关信息和红外信息到MQTT
 
-[拆机对接请学习K大](https://github.com/killadm/LOCK2MQTT)
+[拆机对接](https://github.com/killadm/LOCK2MQTT)请学习K大
 
 [Huex大佬的板子](https://github.com/huexpub/XbBleGW)没有固件和原理图，大概参考了一下画了个简化版的pcb。
 
